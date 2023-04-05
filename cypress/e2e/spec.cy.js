@@ -27,6 +27,7 @@ describe('First basic test', () => {
 
     // Get an input element based of its class(.action-email), then type into it
     //DOM element description: `<input type="email" class="form-control action-email" id="email1" placeholder="Email">`
+    // `.` is to id class and `#` is used for id ex to use id it will be .get('#email1')
     cy.get('.action-email').type('fake@email.com')
 
     //  Verify that the value has been updated
