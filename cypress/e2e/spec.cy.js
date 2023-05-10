@@ -15,7 +15,7 @@ describe('My First Test', () => {
 describe('First basic test', () => {
   it('Visit the kitchen sink test site', () => {
     // Navigate to a web page
-    cy.visit('https://example.cypress.io')
+    cy.visit('/')
 
     // Find a DOM element(type) and perform an action(click)
     cy.contains('type').click()
@@ -34,8 +34,9 @@ describe('First basic test', () => {
     cy.get('.action-email').should('have.value', 'fake@email.com')
     //NOTE: It's best practice not to chain anything after an action command;
 
-    // Use `const` variables since object $email is undergoing change. While dealing with mutable objects and their value, it is recommended to use variables of type const.
-    // Because cypress is ASYNCHRONOUS, we cannot use `const txtField = cy.get('.action-email')` so we use `.then` to get the result then store it in a var
+    // Use `const` variables since object $email is undergoing change.
+    //While dealing with mutable objects and their value, it is recommended to use variables of type const.
+    //Because cypress is ASYNCHRONOUS, we cannot use `const txtField = cy.get('.action-email')` so we use `.then` to get the result then store it in a var
     cy.get('.action-email').then(($email) => {
      // capture element value before button click and stored in const n
      const n = $email.text()
